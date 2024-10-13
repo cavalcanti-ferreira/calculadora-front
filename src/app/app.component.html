@@ -1,19 +1,18 @@
-<!-- <a class="linkFont" routerLink="/calculadora" >Calculadora</a> -->
 <div class="table-size m-5">
 
 <div class="row g-3 mb-5">
   <div class="col">
     <mat-form-field class="example-full-width" appearance="outline" >
       <mat-label>Nome do professor</mat-label>
-      <input matInput [(ngModel)]="formProfessor.nome">
+      <input matInput [(ngModel)]="formProfessor.nome" placeholder="Digite o nome do professor">
     </mat-form-field>
   </div>
   <div class="col">
     <mat-form-field appearance="outline">
       <mat-label>Tempo de regência</mat-label>
       <mat-date-range-input [rangePicker]="picker">
-        <input matStartDate [(ngModel)]="formProfessor.dataInicial" placeholder="Start date" placeholder="dd/MM/aaaa">
-        <input matEndDate [(ngModel)]="formProfessor.dataFinal" placeholder="End date" placeholder="dd/MM/aaaa">
+        <input matStartDate [(ngModel)]="formProfessor.dataInicial" placeholder="Data inicial">
+        <input matEndDate [(ngModel)]="formProfessor.dataFinal" placeholder="Data final">
       </mat-date-range-input>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-date-range-picker #picker></mat-date-range-picker>
@@ -22,14 +21,14 @@
   <div class="col">
     <mat-form-field class="example-full-width" appearance="outline" >
       <mat-label>Licenças</mat-label>
-      <input matInput [(ngModel)]="formProfessor.quantidadeLicenca">
+      <input matInput [(ngModel)]="formProfessor.quantidadeLicenca" placeholder="Número de licenças">
     </mat-form-field>
   </div>
 </div>
 <div class="card p-2">
   <h5>Tabela de Títulos</h5>
   <section class="customTable">
-  <table mat-table [dataSource]="pontuacoes" class="mat-elevation-z8">
+  <table mat-table [dataSource]="pontuacoes" class="mat-elevation-z8" summary="Relação de títulos pontuáveis">
   
      <!-- Checkbox Column -->
      <ng-container matColumnDef="select">
@@ -59,7 +58,7 @@
     <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky: true"></tr>
     <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
   </table>
-</section>
+  </section>
   </div>
 
   <div class="row g-3 m-5">
@@ -74,7 +73,6 @@
     </div>
   </div>
 
-  </div>
+</div>
   
-
 <router-outlet />
